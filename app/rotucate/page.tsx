@@ -95,7 +95,7 @@ export default function RotucatePage() {
             <Button 
               type="submit" 
               disabled={loading || !question}
-              className="mt-4 w-full max-w-md bg-white text-purple-500 hover:bg-purple-500 hover:text-white transition-colors"
+              className="mt-4 w-full max-w-md bg-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white transition-colors"
             >
               {loading ? 'Generating...' : 'Enlighten Me'}
             </Button>
@@ -115,7 +115,7 @@ export default function RotucatePage() {
         <div className="flex justify-center gap-4 mt-8">
           <Button 
             onClick={() => router.push('/home')} 
-            className="bg-white text-purple-500 hover:bg-purple-500 hover:text-white transition-colors"
+            className="bg-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white transition-colors"
           >
             Back to Home
           </Button>
@@ -123,7 +123,7 @@ export default function RotucatePage() {
           <Button 
             onClick={handleSave} 
             disabled={isSaving}
-            className="bg-white text-purple-500 hover:bg-purple-500 hover:text-white transition-colors"
+            className="bg-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white transition-colors"
           >
             {isSaving ? 'Saving...' : 'Save'}
           </Button>

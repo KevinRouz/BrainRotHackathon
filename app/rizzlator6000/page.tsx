@@ -92,7 +92,7 @@ export default function Rizzlator6000Page() {
             <Button 
               type="submit" 
               disabled={loading || !prompt}
-              className="mt-4 w-full max-w-md bg-white text-teal-500 hover:bg-teal-500 hover:text-white transition-colors"
+              className="mt-4 w-full max-w-md bg-teal-500 text-teal-500 hover:bg-blue-500 hover:text-white transition-colors"
             >
               {loading ? 'Rizzifying...' : 'Get Rizzed Response'}
             </Button>
@@ -112,14 +112,14 @@ export default function Rizzlator6000Page() {
         <div className="flex justify-center gap-4 mt-8">
           <Button 
             onClick={() => router.push('/home')} 
-            className="bg-white text-teal-500 hover:bg-teal-500 hover:text-white transition-colors"
+            className="bg-teal-500 text-teal-500 hover:bg-blue-500 hover:text-white transition-colors"
           >
             Back to Home
           </Button>
           <Button 
             onClick={handleSave} 
             disabled={isSaving}
-            className="bg-white text-teal-500 hover:bg-teal-500 hover:text-white transition-colors"
+            className="bg-teal-500 text-teal-500 hover:bg-blue-500 hover:text-white transition-colors"
           >
             {isSaving ? 'Saving...' : 'Save'}
           </Button>
