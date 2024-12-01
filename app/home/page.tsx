@@ -35,7 +35,7 @@ export default function HomePage() {
 
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-start min-h-screen h-screen py-8 px-4 relative">
+      <div className="flex flex-col items-center justify-start min-h-screen h-screen px-4 py-8 relative">
         <motion.h1
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="relative z-10 container mx-auto px-4 py-8"
+        className="relative z-10 container mx-auto px-4"
       >
         {children}
       </motion.div>
