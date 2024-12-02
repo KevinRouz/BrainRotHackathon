@@ -116,13 +116,13 @@ export default function Rizzlator6000Page() {
           >
             Back to Home
           </Button>
-          <Button 
+          {/* <Button 
             onClick={handleSave} 
             disabled={isSaving}
             className="bg-teal-500 text-teal-500 hover:bg-blue-500 hover:text-white transition-colors"
           >
             {isSaving ? 'Saving...' : 'Save'}
-          </Button>
+          </Button> */}
         </div>
       </motion.div>
     </div>

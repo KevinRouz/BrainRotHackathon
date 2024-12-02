@@ -13,12 +13,8 @@ export async function POST(request: Request) {
       model: "gpt-3.5-turbo",
       messages: [
         {
-          role: "system",
-          content: "You are a master of rizz and modern internet slang. Transform the user's input into a super rizzy response with maximum brainrot. Use plenty of modern brainrot slang, rizz-related terms, and keep it entertaining. Make it sound like a Gen Alpha kid with brainrot wrote it."
-        },
-        {
           role: "user",
-          content: prompt
+          content: `You are a master of rizz and modern internet slang. Transform the input: ${prompt} into a super rizzy message the user can send. You are to 'rizzify' whatever message the user inputs. Try to match the general length of the prompt in your response.`
         }
       ],
       temperature: 1.3, // Even higher temperature for more creative rizz

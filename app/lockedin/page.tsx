@@ -57,7 +57,7 @@ export default function LockedInPage() {
               <Button
                 key={type}
                 onClick={() => { setPostType(type); setStep(2); }}
-                className="mb-2 w-full bg-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors"
+                className="mb-2 w-full bg-blue-700 text-blue-500 hover:bg-blue-800 hover:text-white transition-colors"
               >
                 {type}
               </Button>
@@ -72,7 +72,7 @@ export default function LockedInPage() {
               <Button
                 key={exp}
                 onClick={() => { setExperience(exp); setStep(3); }}
-                className="mb-2 w-full bg-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors"
+                className="mb-2 w-full bg-blue-700 text-blue-500 hover:bg-blue-800 hover:text-white transition-colors"
               >
                 {exp}
               </Button>
@@ -90,7 +90,7 @@ export default function LockedInPage() {
               className="w-full p-2 mb-4 rounded bg-white bg-opacity-20 text-white placeholder-white placeholder-opacity-70"
               placeholder="Enter your field"
             />
-            <Button onClick={() => setStep(4)} className="w-full bg-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors">
+            <Button onClick={() => setStep(4)} className="w-full bg-blue-700 text-blue-500 hover:bg-blue-800 hover:text-white transition-colors">
               Next
             </Button>
           </>
@@ -108,7 +108,7 @@ export default function LockedInPage() {
               />
               <label>Yes, relate to B2B sales</label>
             </div>
-            <Button onClick={() => setStep(5)} className="w-full bg-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors">
+            <Button onClick={() => setStep(5)} className="w-full bg-blue-700 text-blue-500 hover:bg-blue-800 hover:text-white transition-colors">
               Next
             </Button>
           </>
@@ -124,7 +124,7 @@ export default function LockedInPage() {
               placeholder="Enter your topic"
               rows={4}
             />
-            <Button onClick={handleSubmit} disabled={loading} className="w-full bg-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors">
+            <Button onClick={handleSubmit} disabled={loading} className="w-full bg-blue-700 text-blue-500 hover:bg-blue-800 hover:text-white transition-colors">
               {loading ? 'Generating...' : 'Generate LinkedIn Post'}
             </Button>
           </>
@@ -136,7 +136,7 @@ export default function LockedInPage() {
             <div className="bg-white bg-opacity-20 p-4 rounded mb-4 whitespace-pre-wrap">
               {generatedPost}
             </div>
-            <Button onClick={() => setStep(1)} className="w-full bg-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors">
+            <Button onClick={() => setStep(1)} className="w-full bg-blue-700 text-blue-500 hover:bg-blue-800 hover:text-white transition-colors">
               Create Another Post
             </Button>
           </>
@@ -166,7 +166,7 @@ export default function LockedInPage() {
       </motion.div>
       <Button 
         onClick={() => router.push('/home')} 
-        className="mt-8 bg-blue-500 hover:bg-blue-500 hover:text-white transition-colors"
+        className="mt-8 bg-blue-800 hover:bg-blue-900 hover:text-white transition-colors"
       >
         Back to Home
       </Button>

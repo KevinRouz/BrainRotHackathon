@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+// import { useEffect } from 'react';
+// import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Card from '../components/Card';
-import { useAuth } from '../../hooks/useAuth';
+// import { useAuth } from '../../hooks/useAuth';
 import Button from '../components/Button';
 
 const cards = [
@@ -16,22 +16,7 @@ const cards = [
 ];
 
 export default function HomePage() {
-  const router = useRouter();
-  const { user, loading, logOut } = useAuth();
 
-  useEffect(() => {
-    if (!loading && !user) {
-      router.push('/auth');
-    }
-  }, [user, loading, router]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!user) {
-    return null;
-  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen h-screen px-4 py-8 relative bg-gradient-to-br from-gray-400 to-gray-200">
@@ -41,7 +26,7 @@ export default function HomePage() {
         transition={{ duration: 0.5 }}
         className="text-4xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-500"
       >
-        Hello, {user.firstName}!
+        Hello, rizzler!
       </motion.h1>
       <div className="w-full max-w-7xl">
         <div className="grid grid-cols-3 gap-8 mb-8">
@@ -76,7 +61,7 @@ export default function HomePage() {
         transition={{ duration: 0.5, delay: 0.6 }}
         className="mt-20"
       >
-        <Button onClick={logOut} className="bg-blue-600 hover:bg-blue-700">Sign Out</Button>
+        {/* <Button onClick={logOut} className="bg-blue-600 hover:bg-blue-700">Sign Out</Button> */}
       </motion.div>
     </div>
   );

@@ -120,13 +120,13 @@ export default function RotucatePage() {
             Back to Home
           </Button>
           
-          <Button 
+          {/* <Button 
             onClick={handleSave} 
             disabled={isSaving}
             className="bg-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white transition-colors"
           >
             {isSaving ? 'Saving...' : 'Save'}
-          </Button>
+          </Button> */}
         </div>
       </motion.div>
     </div>
