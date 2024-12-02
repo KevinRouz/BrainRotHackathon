@@ -14,7 +14,13 @@ export default function LockedInPage() {
     setVideoSrc(src);
   };
 
-  const maxWidthClass = videoSrc === '/soap.mp4' ? 'max-w-full' : 'max-w-lg';
+  const maxWidthClass =
+  videoSrc === '/soap.mp4'
+    ? 'max-w-full'
+    : videoSrc === '/build.mp4' || videoSrc === '/slime.mp4'
+    ? 'max-w-4xl'
+    : 'max-w-lg';
+
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-green-500 to-blue-500 p-4">
@@ -43,8 +49,8 @@ export default function LockedInPage() {
         <Button onClick={() => handleVideoChange('/subway.mp4')} className="bg-sky-400 hover:bg-sky-600">Subway Surfers</Button>
         <Button onClick={() => handleVideoChange('/soap.mp4')} className="bg-yellow-500 hover:bg-yellow-600">Soap Cutting</Button>
         <Button onClick={() => handleVideoChange('/rug.mp4')} className="bg-purple-500 hover:bg-purple-600">Rug Cleaning</Button>
-        <Button onClick={() => handleVideoChange('/build.mp4')} className="bg-orange-500 hover:bg-orange-600">House Building</Button>
-        <Button onClick={() => handleVideoChange('/slime.mp4')} className="bg-pink-500 hover:bg-pink-600">Slime</Button>
+        <Button onClick={() => handleVideoChange('/build.mp4')} className="bg-orange-600 hover:bg-orange-800">House Building</Button>
+        <Button onClick={() => handleVideoChange('/slime.mp4')} className="bg-green-600 hover:bg-green-800">Slime</Button>
       </div>
 
       <Button 
@@ -53,6 +59,11 @@ export default function LockedInPage() {
       >
         Back to Home
       </Button>
+      <img 
+        src="/sigmawolf.png" 
+        alt="Sigma Wolf" 
+        className="fixed bottom-4 right-4 w-80 h-80" 
+      />
     </div>
   );
 }
