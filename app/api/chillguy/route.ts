@@ -25,8 +25,29 @@ export async function POST(request: Request) {
 
     const advice = response.choices[0].message.content;
 
-    return NextResponse.json({
+    const voiceId = "cjVigY5qzO86Huf0OWal"; 
+
+    const elevenLabsResponse = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'audio/mpeg',
+        'Content-Type': 'application/json',
+        'xi-api-key': process.env.ELEVENLABS_API_KEY!
+      },
+      body: JSON.stringify({
+        text: advice,
+        voice_settings: {
+          stability: 0.7,
+          similarity_boost: 0.7
+        }
+      })
+    });
+    const audioBuffer = await elevenLabsResponse.arrayBuffer();
+    const base64Audio = Buffer.from(audioBuffer).toString('base64');
+
+    return NextResponse.json({ 
       advice,
+      audioContent: base64Audio
     });
   } catch (error) {
     console.error('Error:', error);

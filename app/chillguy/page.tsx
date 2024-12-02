@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
@@ -9,6 +9,9 @@ export default function AdvicePage() {
   const [problem, setProblem] = useState('');
   const [history, setHistory] = useState<{ role: string; content: string }[]>([]);
   const [loading, setLoading] = useState(false);
+  const [audioContent, setAudioContent] = useState<string | null>(null);
+  const [advice, setAdvice] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,13 +34,16 @@ export default function AdvicePage() {
 
       const data = await response.json();
 
-      // Update the conversation history
+      // Update the conversation history and show the advice
       setHistory((prev) => [
         ...prev,
         { role: 'user', content: problem },
         { role: 'assistant', content: data.advice },
       ]);
       setProblem('');
+      setAdvice(data.advice);
+      setAudioContent(data.audioContent); // Store the audio content
+
     } catch (error) {
       console.error('Error:', error);
       alert('Failed to generate advice. Please try again.');
@@ -45,6 +51,13 @@ export default function AdvicePage() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (audioContent && audioRef.current) {
+      audioRef.current.src = `data:audio/mpeg;base64,${audioContent}`;
+      audioRef.current.play();
+    }
+  }, [audioContent]); // Play the audio when audioContent changes
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-purple-500 to-pink-500 p-4">
@@ -112,6 +125,8 @@ export default function AdvicePage() {
           </button>
         </form>
       </motion.div>
+
+      <audio ref={audioRef} className="hidden" />
 
       <button
         onClick={() => router.push('/home')}
