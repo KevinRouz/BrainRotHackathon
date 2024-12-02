@@ -8,15 +8,12 @@ import Button from '../components/Button';
 export default function LockedInPage() {
   const router = useRouter();
 
-  // State to manage the currently playing video
   const [videoSrc, setVideoSrc] = useState('/parkour.mp4');
 
-  // Function to handle video change based on the selected button
   const handleVideoChange = (src: string) => {
     setVideoSrc(src);
   };
 
-  // Determine the max-width class based on the selected video
   const maxWidthClass = videoSrc === '/soap.mp4' ? 'max-w-full' : 'max-w-lg';
 
   return (
@@ -30,7 +27,6 @@ export default function LockedInPage() {
         LockedIn
       </motion.h1>
 
-      {/* Video player */}
       <div className="relative w-full mb-4">
         <video 
           src={videoSrc} 
@@ -42,7 +38,6 @@ export default function LockedInPage() {
         />
       </div>
 
-      {/* Buttons to change the video */}
       <div className="flex gap-4">
         <Button onClick={() => handleVideoChange('/parkour.mp4')} className="bg-green-500 hover:bg-green-600">Parkour</Button>
         <Button onClick={() => handleVideoChange('/subway.mp4')} className="bg-blue-400 hover:bg-blue-600">Subway Surfers</Button>
@@ -50,7 +45,6 @@ export default function LockedInPage() {
         <Button onClick={() => handleVideoChange('/rug.mp4')} className="bg-purple-500 hover:bg-purple-600">Rug Cleaning</Button>
       </div>
 
-      {/* Navigation Button */}
       <Button 
         onClick={() => router.push('/home')} 
         className="mt-8 bg-blue-600 hover:bg-blue-700 hover:text-white transition-colors"
