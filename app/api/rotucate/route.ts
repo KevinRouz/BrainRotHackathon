@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
-import slangDictionary from './brainrot.json';
+import slangDictionary from '@/public/brainrot.json';
 
 
 const openai = new OpenAI({
