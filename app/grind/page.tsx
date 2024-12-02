@@ -39,10 +39,12 @@ export default function LockedInPage() {
       </div>
 
       <div className="flex gap-4">
-        <Button onClick={() => handleVideoChange('/parkour.mp4')} className="bg-green-500 hover:bg-green-600">Parkour</Button>
-        <Button onClick={() => handleVideoChange('/subway.mp4')} className="bg-blue-400 hover:bg-blue-600">Subway Surfers</Button>
+      <Button onClick={() => handleVideoChange('/parkour.mp4')} className="bg-red-500 hover:bg-red-600">Parkour</Button>
+        <Button onClick={() => handleVideoChange('/subway.mp4')} className="bg-sky-400 hover:bg-sky-600">Subway Surfers</Button>
         <Button onClick={() => handleVideoChange('/soap.mp4')} className="bg-yellow-500 hover:bg-yellow-600">Soap Cutting</Button>
         <Button onClick={() => handleVideoChange('/rug.mp4')} className="bg-purple-500 hover:bg-purple-600">Rug Cleaning</Button>
+        <Button onClick={() => handleVideoChange('/build.mp4')} className="bg-orange-500 hover:bg-orange-600">House Building</Button>
+        <Button onClick={() => handleVideoChange('/slime.mp4')} className="bg-pink-500 hover:bg-pink-600">Slime</Button>
       </div>
 
       <Button 
