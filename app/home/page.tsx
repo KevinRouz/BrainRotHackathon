@@ -43,7 +43,7 @@ export default function HomePage() {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+          className="text-4xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-orange-500"
         >
           Hello, {user.firstName}!
         </motion.h1>
@@ -66,7 +66,7 @@ export default function HomePage() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mt-20"
         >
-          <Button onClick={logOut}>Sign Out</Button>
+          <Button onClick={logOut} className="bg-blue-600 hover:bg-blue-700">Sign Out</Button>
         </motion.div>
         
       </div>
