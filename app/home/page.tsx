@@ -10,9 +10,9 @@ import Button from '../components/Button';
 const cards = [
   { title: 'Brain Nourishment', description: "Education, the ocky way.", gradient: 'bg-gradient-to-br from-purple-500 to-pink-500', image: '/twoguys.png', route: '/rotucate' },
   { title: 'Rizzlator6000', description: 'Skibidi rizzify your messages.', gradient: 'bg-gradient-to-br from-blue-500 to-teal-500', image: 'rizz.png', route: '/rizzlator6000' },  
-  { title: 'Grind Session', description: 'Lock in with some brainrot stimulation.', gradient: 'bg-gradient-to-br from-green-500 to-yellow-500', image: '', route: '/grind' },
+  { title: 'Grind Session', description: 'Lock in with some brainrot stimulation.', gradient: 'bg-gradient-to-br from-green-500 to-yellow-500', image: '/monke.png', route: '/grind' },
   { title: 'We\'re Chill Guys', description: 'I\'m just a chill guy, what more is there to say?', gradient: 'bg-gradient-to-br from-red-500 to-blue-500', image: '/chill-guy.png', route: '/chillguy' },
-  { title: 'LockedIn', description: `GYATT, that's a bussin LinkedIn post... AMBATAKUM`, gradient: 'bg-gradient-to-br from-green-500 to-blue-500', image: '', route: '/lockedin' },
+  { title: 'LockedIn', description: `GYATT, that's a bussin LinkedIn post... AMBATAKUM`, gradient: 'bg-gradient-to-br from-green-500 to-blue-500', image: '/lockedin.png', route: '/lockedin' },
 ];
 
 export default function HomePage() {

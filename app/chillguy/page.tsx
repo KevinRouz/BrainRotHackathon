@@ -1,4 +1,3 @@
-// app/advice/page.tsx
 'use client'
 
 import { useState, useRef } from 'react';
@@ -93,7 +92,6 @@ export default function AdvicePage() {
           </motion.div>
         )}
 
-        <audio ref={audioRef} className="hidden" />
       </motion.div>
 
       <Button 
