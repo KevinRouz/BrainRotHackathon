@@ -3,12 +3,13 @@ import Link from 'next/link';
 
 interface CardProps {
   title: string;
+  description: string;
   gradient: string;
   image: string;
   route: string;
 }
 
-export default function Card({ title, gradient, image, route }: CardProps) {
+export default function Card({ title, description, gradient, image, route }: CardProps) {
   return (
     <Link href={route}>
       <motion.div
@@ -21,17 +22,23 @@ export default function Card({ title, gradient, image, route }: CardProps) {
       >
         <motion.div
           className="absolute inset-0 bg-cover bg-center"
-          initial={{ opacity: 0.1 }}
-          whileHover={{ opacity: 0.3 }}
+          initial={{ opacity: 0.3 }}
+          whileHover={{ opacity: 0.5 }}
           transition={{ duration: 0.3 }}
-          style={{ backgroundImage: `url(${image})` }}
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundSize: 'contain',
+            backgroundPosition: 'bottom right',
+            backgroundRepeat: 'no-repeat',
+          }}
         />
         <motion.div
           className="absolute inset-0 bg-black bg-opacity-20"
           whileHover={{ opacity: 0 }}
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
           <h2 className="text-2xl font-bold text-white">{title}</h2>
+          <p className="text-sm text-gray-200 mt-2">{description}</p>
         </div>
       </motion.div>
     </Link>
